@@ -1,0 +1,21 @@
+.img-wrapper {
+    position: relative;
+    float: left
+}
+
+.img-wrapper a {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+    padding: 3%;
+}
+
+.img-wrapper:hover a {
+    display: block;
+}
+
+.transform {
+    opacity: 0.6;
+    transform: scale(0.8);
+}
