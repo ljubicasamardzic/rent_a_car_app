@@ -14,7 +14,7 @@ class VehicleFactory extends Factory
         return [
             'plate_no' => $this->faker->name(),
             'production_year' => $this->faker->year(),
-            'car_type_id' => rand(1, 5),
+            'car_type_id' => rand(1, 3),
             'no_of_seats' => rand(2, 5),
             'price_per_day' => rand(25, 90)
         ];
