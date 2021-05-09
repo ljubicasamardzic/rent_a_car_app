@@ -36,7 +36,6 @@ class ReservationController extends Controller
 
     public function store(ReservationRequest $request)
     {
-        // dd($request);
         // information for the reservation 
         $data = [
             'client_id' => $request->client_id,

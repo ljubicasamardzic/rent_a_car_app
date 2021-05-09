@@ -88,7 +88,6 @@
         img_arr.value = JSON.stringify(arr);
 
         console.log(img_arr.value);
-
     }
 </script>
 @endsection

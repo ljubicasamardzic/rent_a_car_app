@@ -52,8 +52,6 @@
                 @else  <p>No additional equipment has been added.</p>  
                 @endif
 
-            
-            
         </div>
     </div>
 @endsection

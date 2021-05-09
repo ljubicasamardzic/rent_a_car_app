@@ -9,10 +9,6 @@
             <h3 class="mt-3">Edit a Client</h3>
         </div>
 
-        @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-
         <form action="/clients/{{ $client->id }}" method="POST" class="mt-3">
             @csrf
             @method('PUT')

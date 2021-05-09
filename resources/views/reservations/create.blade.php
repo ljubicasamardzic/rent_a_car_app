@@ -3,21 +3,7 @@
 @section('page_title') New Reservation @endsection
 
 @section('content')
-<script> 
-    function call(e){
-        let id = e.getAttribute('data-id')
-        let status = e.checked
-        let checkbox = document.querySelector('.equipment-quantity[data-id="' + id + '"]');
 
-        checkbox.disabled = !status;
-
-        checkbox.disabled == false ? checkbox.required = true : checkbox.required = false;
-
-        document.querySelector('.equipment-quantity[data-id="' + id + '"]').value = null;
-    }
-
-</script>
-    
     <div class="container-fluid">
         <div class="row">
             <div class="col-4">
@@ -106,34 +92,6 @@
                             </div>
                         @enderror
                     </div>
-                        {{-- <table class="mt-2" id="table">
-                                <label class="mt-4" for="equipment">Add Additional Equipment:</label>
-                                @foreach ($equipment as $item)
-                                    <tr>
-                                        <td>
-                                            <input class="mr-2" name="check[{{ $item->id }}]" {{ (old('check.'.$item->id) == true) ? 'checked': '' }} type="checkbox" data-id="{{ $item->id }}" onclick="call(this);">
-                                        </td>
-                                        <td>
-                                            <label class="form-check-label">{{ $item->name }}</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" 
-                                                    data-id="{{ $item->id }}"  
-                                                    value="{{ old('equipment.'.$item->id) }}" 
-                                                    name="equipment[{{ $item->id }}]" 
-                                                    placeholder="Quantity (max {{ $item->max_quantity }})" 
-                                                    class="form-control ml-3 equipment-quantity @error('equipment.'.$item->id) is-invalid @enderror" 
-                                                    {{ (old('check.'.$item->id) == true) ?  '' : 'disabled' }}>
-                                        </td>
-                                        
-                                    </tr> 
-                                    @error('equipment.'.$item->id)
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                @endforeach
-                        </table> --}}
 
                     <div class="mt-2">
                         <label class="mt-4" for="equipment">Add Additional Equipment:</label>

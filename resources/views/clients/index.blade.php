@@ -30,12 +30,9 @@
                 </thead>
                 <tbody>
                     @foreach ($clients as $client)
-                       
-                        {{-- @section('modal')@endsection
-                        @section('id') {{ $client->id }} @endsection --}}
 
                          <!-- Modal -->
-                        {{-- <div class="modal fade" id="dlt_modal{{ $client->id }}" tabindex="-1" aria-labelledby="dlt_modalLabel" aria-hidden="true">
+                        <div class="modal fade" id="dlt_modal{{ $client->id }}" tabindex="-1" aria-labelledby="dlt_modalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -56,12 +53,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
-                        @section('modal_id'){{ 'dlt_modal'.$client->id }}@endsection
-                        @section('close_func'){{ 'closeModal('.$client->id.')' }}@endsection
-                        @section('delete_route'){{ '/clients/'.$client->id }}@endsection
-                            
-                        @include('partials.modal')
+                        </div>
 
                         <tr>
                             <td>{{ $client->id}}</td>

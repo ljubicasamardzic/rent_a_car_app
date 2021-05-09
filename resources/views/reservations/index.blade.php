@@ -43,7 +43,7 @@
                 <tbody>
                     @foreach ($reservations as $res)
                         <!-- Modal -->
-                        {{-- <div class="modal fade" id="dlt_modal{{ $res->id }}" tabindex="-1" aria-labelledby="dlt_modalLabel" aria-hidden="true">
+                        <div class="modal fade" id="dlt_modal{{ $res->id }}" tabindex="-1" aria-labelledby="dlt_modalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -63,13 +63,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
-
-                        @section('modal_id'){{ 'dlt_modal'.$res->id }}@endsection
-                        @section('close_func'){{ 'closeModal('.$res->id.')' }}@endsection
-                        @section('delete_route'){{ '/reservations/'.$res->id }}@endsection
-                            
-                        @include('partials.modal')
+                        </div>
 
                         <tr>
                             <td>{{ $res->id }}</td>

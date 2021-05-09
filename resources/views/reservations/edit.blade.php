@@ -3,19 +3,6 @@
 @section('page_title') Edit a Reservation @endsection
 
 @section('content')
-<script> 
-    function call(e){
-        let id = e.getAttribute('data-id')
-        let status = e.checked
-        let checkbox = document.querySelector('.equipment-quantity[data-id="' + id + '"]');
-
-        checkbox.disabled = !status;
-
-        checkbox.disabled == false ? checkbox.required = true : checkbox.required = false;
-
-        document.querySelector('.equipment-quantity[data-id="' + id + '"]').value = null;
-    }
-</script>
 
     <div class="container-fluid">
         <div class="row">
@@ -35,6 +22,7 @@
                                 </option>
                             @endforeach
                         </select>
+
                         @error('client_id')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -52,6 +40,7 @@
                                 </option>
                             @endforeach
                         </select>
+
                         @error('vehicle_id')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -65,6 +54,7 @@
                                 value="{{ old('rent_date', $reservation->from_date) }}" 
                                 name="rent_date" 
                                 class="form-control @error('rent_date') is-invalid @enderror">
+                        
                         @error('rent_date')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -78,6 +68,7 @@
                                 value="{{ old('return_date', $reservation->to_date) }}" 
                                 name="return_date" 
                                 class="form-control @error('return_date') is-invalid @enderror">
+                        
                         @error('return_date')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -98,6 +89,7 @@
                                 </option>
                             @endforeach
                         </select>
+                        
                         @error('rent_location')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -118,6 +110,7 @@
                                 </option>
                             @endforeach
                         </select>
+                        
                         @error('return_location')
                             <div class="invalid-feedback">
                                 {{ $message }}

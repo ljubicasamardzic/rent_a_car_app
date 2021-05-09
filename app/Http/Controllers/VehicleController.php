@@ -86,7 +86,7 @@ class VehicleController extends Controller
             return redirect("/vehicles/$new_vehicle->id");
         } catch (ErrorException $error) {
             DB::rollBack();
-            return redirect()->back();
+            return redirect('/vehicles?error_occurred_vehicle_not_added');
         }
 
         return redirect("/vehicles/$new_vehicle->id");
@@ -191,7 +191,6 @@ class VehicleController extends Controller
                 } 
             } 
 
-
             DB::commit();
 
             $request->session()->forget('vehicle');
@@ -202,8 +201,7 @@ class VehicleController extends Controller
 
         } catch (ErrorException $error) {
             DB::rollBack();
-            // dd($error);
-            return redirect('/vehicles');
+            return redirect('/vehicles?error_occurred_vehicle_not_edited');
         }
 
     }  

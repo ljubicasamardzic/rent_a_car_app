@@ -24,10 +24,11 @@
                                 value="{{ old('plate_number', $vehicle ? $vehicle['plate_number'] : '') }}" 
                                 name="plate_number" 
                                 class="form-control @error('plate_number') is-invalid @enderror">
+                        
                         @error('plate_number')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                         @enderror
                     </div>
                     
@@ -38,10 +39,11 @@
                                 value="{{ old('production_year', $vehicle ? $vehicle['production_year'] : '') }}" 
                                 name="production_year" 
                                 class="form-control @error('production_year') is-invalid @enderror">
+                        
                         @error('production_year')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                         @enderror
                     </div>
                     
@@ -57,9 +59,9 @@
                         </select>
 
                         @error('car_type')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                         @enderror
                     </div>
                         
@@ -70,10 +72,11 @@
                                 value="{{ old('number_of_seats', $vehicle ? $vehicle['number_of_seats'] : '') }}" 
                                 class="form-control @error('number_of_seats') is-invalid @enderror" 
                                 name="number_of_seats">
+                        
                         @error('number_of_seats')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                         @enderror
                     </div>
 
@@ -84,10 +87,11 @@
                                 value="{{ old('price_per_day', $vehicle ? $vehicle['price_per_day'] : '') }}" 
                                 class="form-control @error('price_per_day') is-invalid @enderror" 
                                 name="price_per_day">
+                        
                         @error('price_per_day')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                         @enderror
                     </div>
 
@@ -98,10 +102,11 @@
                                     class="form-control @error('remarks') is-invalid @enderror" 
                                     name="remarks" 
                                     rows="4">{{ old('remarks', $vehicle ? $vehicle['remarks'] : '') }}</textarea>
+                        
                         @error('remarks')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                         @enderror
                     </div>
 

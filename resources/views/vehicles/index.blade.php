@@ -10,18 +10,6 @@
 
 @include('partials.navigation')
 
-@section('scripts')
-    <script type="text/javascript">
-        function showModal(id) {
-            $('#dlt_modal' + id).modal('show');
-        }
-
-        function closeModal(id) {
-            $('#dlt_modal' + id).modal('hide');
-        }
-    </script>
-@endsection
-
     <div class="container-fluid">
         <div class="row">
             <table class="table table-responsive-sm table-hover table-striped mt-3">
@@ -42,7 +30,7 @@
                     @foreach ($vehicles as $vehicle)
 
                          <!-- Modal -->
-                         {{-- <div class="modal fade" id="dlt_modal{{ $vehicle->id }}" tabindex="-1" aria-labelledby="dlt_modalLabel" aria-hidden="true">
+                        <div class="modal fade" id="dlt_modal{{ $vehicle->id }}" tabindex="-1" aria-labelledby="dlt_modalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -63,14 +51,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
-
-                        @section('modal_id'){{ 'dlt_modal'.$vehicle->id }}@endsection
-                        @section('close_func'){{ 'closeModal('.$vehicle->id.')' }}@endsection
-                        @section('delete_route'){{ '/vehicles/'.$vehicle->id }}@endsection
-                            
-                        @include('partials.modal')
-
+                        </div>
+                       
                         <tr>
                             <td>{{ $vehicle->id}}</td>
                             <td><a href="/vehicles/{{ $vehicle->id }}">{{ $vehicle->plate_no }}</a></td>
@@ -91,4 +73,15 @@
         <div class="d-flex flex-row justify-content-center">{{ $vehicles->links() }}</div>
     </div>
 
+    @section('scripts')
+    <script type="text/javascript">
+        function showModal(id) {
+            $('#dlt_modal' + id).modal('show');
+        }
+
+        function closeModal(id) {
+            $('#dlt_modal' + id).modal('hide');
+        }
+    </script>
+    @endsection
 @endsection
